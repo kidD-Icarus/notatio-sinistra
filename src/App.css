@@ -1,0 +1,477 @@
+/* Notatio Sinistra v1 - Styles */
+/* kidDicarus Inc. Branding: Crimson & Gold */
+
+:root {
+  --crimson: #8B0000;
+  --crimson-dark: #5C0000;
+  --crimson-light: #A52A2A;
+  --gold: #D4AF37;
+  --gold-light: #F0D77D;
+  --gold-dark: #B8860B;
+  --black: #1A1A1A;
+  --white: #FAFAFA;
+  --gray-100: #F5F5F5;
+  --gray-200: #E5E5E5;
+  --gray-300: #D4D4D4;
+  --gray-600: #525252;
+  --gray-800: #262626;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--gray-100);
+  color: var(--black);
+  min-height: 100vh;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, var(--crimson-dark) 0%, var(--crimson) 100%);
+  color: var(--white);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.logo-text {
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 0.3em;
+  color: var(--white);
+}
+
+.logo-sinistra {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+}
+
+.tagline {
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+/* Main Content */
+.main {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Mode Selector */
+.mode-selector {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.mode-btn {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  border: 2px solid var(--crimson);
+  background: var(--white);
+  color: var(--crimson);
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.mode-btn:hover {
+  background: var(--gray-100);
+}
+
+.mode-btn.active {
+  background: var(--crimson);
+  color: var(--white);
+}
+
+/* Input Sections */
+.input-section {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* File Drop Zone */
+.file-drop-zone {
+  border: 3px dashed var(--gray-300);
+  border-radius: 8px;
+  padding: 3rem 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.file-drop-zone:hover {
+  border-color: var(--crimson);
+  background: var(--gray-100);
+}
+
+.drop-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.drop-text {
+  font-size: 1.1rem;
+  color: var(--gray-600);
+  margin-bottom: 0.5rem;
+}
+
+.drop-formats {
+  font-size: 0.85rem;
+  color: var(--gray-600);
+}
+
+/* Manual Input Controls */
+.manual-controls {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.control-group label {
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gray-600);
+}
+
+.control-group input[type="text"],
+.control-group select {
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--gray-300);
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.control-group input[type="text"]:focus,
+.control-group select:focus {
+  outline: none;
+  border-color: var(--crimson);
+}
+
+/* Button Groups */
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.button-group button {
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--gray-300);
+  background: var(--white);
+  color: var(--black);
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.button-group button:hover {
+  border-color: var(--crimson);
+}
+
+.button-group button.active {
+  background: var(--crimson);
+  color: var(--white);
+  border-color: var(--crimson);
+}
+
+.duration-group button {
+  font-size: 1.5rem;
+  min-width: 2.5rem;
+}
+
+/* Note Input Buttons */
+.note-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.note-button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.note-btn {
+  padding: 0.5rem 0.75rem;
+  border: 2px solid var(--gray-300);
+  background: var(--white);
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.note-btn.natural {
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 0.75rem 1rem;
+}
+
+.note-btn.flat,
+.note-btn.sharp {
+  font-size: 0.9rem;
+  padding: 0.25rem 0.5rem;
+  color: var(--gray-600);
+}
+
+.note-btn:hover {
+  border-color: var(--crimson);
+  background: var(--gray-100);
+}
+
+.note-btn.rest {
+  font-size: 1.5rem;
+  padding: 0.75rem 1rem;
+  margin-left: 0.5rem;
+}
+
+/* Actions */
+.actions {
+  flex-direction: row !important;
+  gap: 1rem !important;
+}
+
+.actions button {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--crimson);
+  background: var(--crimson);
+  color: var(--white);
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.actions button:hover {
+  background: var(--crimson-dark);
+}
+
+.actions button.danger {
+  background: var(--white);
+  color: var(--crimson);
+}
+
+.actions button.danger:hover {
+  background: var(--crimson);
+  color: var(--white);
+}
+
+/* State Info */
+.state-info {
+  text-align: center;
+  padding: 0.75rem;
+  background: var(--gray-100);
+  border-radius: 4px;
+  color: var(--gray-600);
+  font-size: 0.9rem;
+}
+
+/* Error & Loading */
+.error-message {
+  background: #FEE2E2;
+  border: 1px solid #EF4444;
+  color: #DC2626;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: var(--gray-600);
+  font-size: 1.1rem;
+}
+
+/* Render Section */
+.render-section {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.render-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.render-header h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--black);
+}
+
+.view-toggle {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.view-toggle button {
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--gold);
+  background: var(--white);
+  color: var(--gold-dark);
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.view-toggle button:hover {
+  background: var(--gold-light);
+}
+
+.view-toggle button.active {
+  background: var(--gold);
+  color: var(--black);
+}
+
+/* Render Container */
+.render-container {
+  min-height: 400px;
+  border: 1px solid var(--gray-200);
+  border-radius: 4px;
+  background: var(--white);
+  overflow: auto;
+}
+
+.render-container.rtl {
+  direction: rtl;
+}
+
+.render-container svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Export Section */
+.export-section {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+.export-section button {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--gold);
+  background: var(--gold);
+  color: var(--black);
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.export-section button:hover {
+  background: var(--gold-dark);
+  border-color: var(--gold-dark);
+  color: var(--white);
+}
+
+/* Footer */
+.footer {
+  background: var(--gray-800);
+  color: var(--white);
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ki-logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--gold);
+}
+
+.footer-text {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main {
+    padding: 1rem;
+  }
+  
+  .logo-text,
+  .logo-sinistra {
+    font-size: 1.5rem;
+  }
+  
+  .render-header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .note-buttons {
+    justify-content: center;
+  }
+  
+  .footer {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}
