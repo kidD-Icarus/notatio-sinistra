@@ -1,4 +1,4 @@
-// Notatio Sinistra v1 - Main Application
+// Notatio Sinistra v1.1 - Main Application
 
 import { useState, useRef, useEffect, useCallback } from 'react';
 import type { Score, SinistraScore, NoteDuration, Pitch, Clef } from './types/notation';
@@ -20,6 +20,7 @@ import {
   clearState,
   type ManualEntryState 
 } from './input/manual';
+import { HelpModal } from './components/HelpModal';
 import './App.css';
 
 type InputMode = 'file' | 'manual';
@@ -62,6 +63,7 @@ function App() {
   const [title, setTitle] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [showHelp, setShowHelp] = useState(false);
   
   const renderContainerRef = useRef<HTMLDivElement>(null);
   const rendererRef = useRef<SinistraRenderer | null>(null);
@@ -237,11 +239,18 @@ function App() {
   return (
     <div className="app">
       <header className="header">
-        <div className="logo">
-          <span className="logo-text">NOTATIO</span>
-          <span className="logo-sinistra">SINISTRA</span>
+        <div className="header-content">
+          <div className="logo-section">
+            <div className="logo">
+              <span className="logo-text">NOTATIO</span>
+              <span className="logo-sinistra">SINISTRA</span>
+            </div>
+            <div className="tagline">Right-to-Left Music Notation</div>
+          </div>
+          <button className="help-btn" onClick={() => setShowHelp(true)}>
+            Have a PDF?
+          </button>
         </div>
-        <div className="tagline">Right-to-Left Music Notation</div>
       </header>
       
       <main className="main">
@@ -277,6 +286,12 @@ function App() {
               <div className="drop-formats">
                 MusicXML (.xml, .musicxml) • MIDI (.mid, .midi)
               </div>
+              <button 
+                className="pdf-help-link"
+                onClick={(e) => { e.stopPropagation(); setShowHelp(true); }}
+              >
+                Have a PDF? Learn how to convert it →
+              </button>
             </div>
           </div>
         )}
@@ -464,9 +479,11 @@ function App() {
           <span>kidDicarus Inc.</span>
         </div>
         <div className="footer-text">
-          Notatio Sinistra v1.0
+          Notatio Sinistra v1.1
         </div>
       </footer>
+
+      <HelpModal isOpen={showHelp} onClose={() => setShowHelp(false)} />
     </div>
   );
 }
