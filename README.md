@@ -1,4 +1,4 @@
-# Notatio Sinistra v1.0
+# Notatio Sinistra v1.1
 
 **Right-to-Left Music Notation System**
 
@@ -11,6 +11,7 @@ Converts standard sheet music (LTR) to Sinistra format (RTL) for musicians who r
 - **Transform**: Automatic LTR → RTL conversion
 - **Export**: SVG, PNG, PDF
 - **Toggle View**: Switch between Sinistra (RTL) and Original (LTR)
+- **PDF Guide**: Built-in help for converting PDFs via Audiveris
 
 ## Quick Start
 
@@ -26,6 +27,26 @@ npm run build
 ```
 
 Deploy the `dist` folder to Netlify, Vercel, or any static host.
+
+## Converting PDFs
+
+Most sheet music exists as PDFs. Use **Audiveris** (free, open-source) to convert:
+
+1. Download [Audiveris](https://github.com/Audiveris/audiveris/releases)
+2. Open your PDF in Audiveris
+3. Let it process → export as MusicXML
+4. Upload MusicXML to Notatio Sinistra
+5. Transform to RTL
+
+### Alternative Tools
+- **PlayScore 2** — Mobile app (iOS/Android), free tier
+- **ScanScore** — Desktop (~$50)
+- **SmartScore** — Desktop (~$200, highest accuracy)
+
+### Tips for Best Results
+- Use high-resolution scans (300 DPI+)
+- Keep pages straight, not skewed
+- Clean printed scores convert better than old/faded ones
 
 ## Tech Stack
 
@@ -44,10 +65,11 @@ Deploy the `dist` folder to Netlify, Vercel, or any static host.
 
 ## Roadmap
 
-- [ ] PDF/Image OCR import (Audiveris integration)
+- [x] PDF conversion guide (Audiveris workflow)
 - [ ] RJJSJJJS color coding (Root=red, Jumps=blue, Steps=green)
 - [ ] VST plugin version
 - [ ] MuseScore plugin
+- [ ] Direct Audiveris integration (server-side)
 
 ---
 
